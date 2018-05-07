@@ -1,0 +1,29 @@
+{
+  "name": "@xmobe/user",
+  "version": "1.0.0",
+  "description": "xMobe's User General Package",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && mocha ./dist/**/*.spec.js --reporter spec",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha ./dist/**/*.spec.js -- -R spec"
+  },
+  "keywords": [
+    "User",
+    "xMobe"
+  ],
+  "author": "quanganh@aiti.com.vn",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.4",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.1.1",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  }
+}
