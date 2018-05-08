@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "tsc && mocha ./dist/**/*.spec.js --reporter spec",
+    "clean": "rm -Rf ./dist",
+    "build": "npm run clean && tsc",
+    "test": "npm run clean && tsc && nyc --reporter=html --reporter=text mocha ./dist/**/**/*.spec.js -R spec",
+    "coveralls": "nyc report --reporter=lcov",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha ./dist/**/*.spec.js -- -R spec"
   },
   "keywords": [
@@ -23,6 +25,7 @@
     "coveralls": "^3.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   }
